@@ -1,0 +1,43 @@
+Source: rust-ctor
+Section: rust
+Priority: optional
+Build-Depends: debhelper (>= 12),
+ dh-cargo (>= 25),
+ cargo:native <!nocheck>,
+ rustc:native <!nocheck>,
+ libstd-rust-dev <!nocheck>,
+ librust-quote-1+default-dev (>= 1.0.20-~~) <!nocheck>,
+ librust-syn-1+full-dev (>= 1.0.98-~~) <!nocheck>,
+ librust-syn-1+parsing-dev (>= 1.0.98-~~) <!nocheck>,
+ librust-syn-1+printing-dev (>= 1.0.98-~~) <!nocheck>,
+ librust-syn-1+proc-macro-dev (>= 1.0.98-~~) <!nocheck>
+Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
+Uploaders:
+ Robin Krahl <robin.krahl@ireas.org>
+Standards-Version: 4.6.1
+Vcs-Git: https://salsa.debian.org/rust-team/debcargo-conf.git [src/ctor]
+Vcs-Browser: https://salsa.debian.org/rust-team/debcargo-conf/tree/master/src/ctor
+X-Cargo-Crate: ctor
+Rules-Requires-Root: no
+
+Package: librust-ctor-dev
+Architecture: any
+Multi-Arch: same
+Depends:
+ ${misc:Depends},
+ librust-quote-1+default-dev (>= 1.0.20-~~),
+ librust-syn-1+full-dev (>= 1.0.98-~~),
+ librust-syn-1+parsing-dev (>= 1.0.98-~~),
+ librust-syn-1+printing-dev (>= 1.0.98-~~),
+ librust-syn-1+proc-macro-dev (>= 1.0.98-~~)
+Provides:
+ librust-ctor+default-dev (= ${binary:Version}),
+ librust-ctor-0-dev (= ${binary:Version}),
+ librust-ctor-0+default-dev (= ${binary:Version}),
+ librust-ctor-0.1-dev (= ${binary:Version}),
+ librust-ctor-0.1+default-dev (= ${binary:Version}),
+ librust-ctor-0.1.26-dev (= ${binary:Version}),
+ librust-ctor-0.1.26+default-dev (= ${binary:Version})
+Description: __attribute__((constructor)) for Rust - Rust source code
+ This package contains the source for the Rust ctor crate, packaged by debcargo
+ for use with cargo and dh-cargo.

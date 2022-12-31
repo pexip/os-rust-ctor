@@ -1,0 +1,14 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test ctor 0.1.26 --all-targets --all-features
+Features: test-name=rust-ctor:@
+Depends: dh-cargo (>= 18), librust-libc-print-0.1+default-dev (>= 0.1.20-~~), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test ctor 0.1.26 --all-targets
+Features: test-name=librust-ctor-dev:default
+Depends: dh-cargo (>= 18), librust-libc-print-0.1+default-dev (>= 0.1.20-~~), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test ctor 0.1.26 --all-targets --no-default-features
+Features: test-name=librust-ctor-dev:
+Depends: dh-cargo (>= 18), librust-libc-print-0.1+default-dev (>= 0.1.20-~~), @
+Restrictions: allow-stderr, skip-not-installable
