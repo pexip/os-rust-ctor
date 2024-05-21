@@ -7,10 +7,10 @@ Build-Depends: debhelper (>= 12),
  rustc:native <!nocheck>,
  libstd-rust-dev <!nocheck>,
  librust-quote-1+default-dev (>= 1.0.20-~~) <!nocheck>,
- librust-syn-1+full-dev (>= 1.0.98-~~) <!nocheck>,
- librust-syn-1+parsing-dev (>= 1.0.98-~~) <!nocheck>,
- librust-syn-1+printing-dev (>= 1.0.98-~~) <!nocheck>,
- librust-syn-1+proc-macro-dev (>= 1.0.98-~~) <!nocheck>
+ librust-syn-2+full-dev (>= 2.0.10-~~) <!nocheck>,
+ librust-syn-2+parsing-dev (>= 2.0.10-~~) <!nocheck>,
+ librust-syn-2+printing-dev (>= 2.0.10-~~) <!nocheck>,
+ librust-syn-2+proc-macro-dev (>= 2.0.10-~~) <!nocheck>
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Rust Maintainers <pkg-rust-maintainers@alioth-lists.debian.net>
 XSBC-Pexip-Original-Uploaders:
@@ -28,10 +28,10 @@ Multi-Arch: same
 Depends:
  ${misc:Depends},
  librust-quote-1+default-dev (>= 1.0.20-~~),
- librust-syn-1+full-dev (>= 1.0.98-~~),
- librust-syn-1+parsing-dev (>= 1.0.98-~~),
- librust-syn-1+printing-dev (>= 1.0.98-~~),
- librust-syn-1+proc-macro-dev (>= 1.0.98-~~)
+ librust-syn-2+full-dev (>= 2.0.10-~~),
+ librust-syn-2+parsing-dev (>= 2.0.10-~~),
+ librust-syn-2+printing-dev (>= 2.0.10-~~),
+ librust-syn-2+proc-macro-dev (>= 2.0.10-~~)
 Provides:
  librust-ctor+default-dev (= ${binary:Version}),
  librust-ctor-0-dev (= ${binary:Version}),

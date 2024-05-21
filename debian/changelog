@@ -1,6 +1,7 @@
 rust-ctor (0.1.26-1+pexip24u1) pexip; urgency=medium
 
   * Prepare Pexip packaging
+  * Upgrade to syn-2
 
  -- Huw Jones <huw@pexip.com>  Tue, 21 May 2024 17:07:20 +0100
 

@@ -1,0 +1,42 @@
+From a93fd670188f0b5560480081dd94308c8316be5a Mon Sep 17 00:00:00 2001
+From: Audun Halland <audun.halland@pm.me>
+Date: Sun, 26 Mar 2023 17:00:24 +0200
+Subject: [PATCH] chore: Upgrade to syn 2.0 (#262)
+
+---
+ Cargo.toml |  2 +-
+ src/lib.rs |  4 ++--
+ 3 files changed, 15 insertions(+), 15 deletions(-)
+
+diff --git a/Cargo.toml b/Cargo.toml
+index 7cbd6a1..c900f91 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -31,7 +31,7 @@ path = "src/example.rs"
+ version = "1.0.20"
+ 
+ [dependencies.syn]
+-version = "1.0.98"
++version = "2.0.10"
+ features = [
+     "full",
+     "parsing",
+diff --git a/src/lib.rs b/src/lib.rs
+index ea95637..b5be692 100644
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -205,12 +205,12 @@ pub fn ctor(_attribute: TokenStream, function: TokenStream) -> TokenStream {
+             ..
+         } = var;
+ 
+-        if mutability.is_some() {
++        if matches!(mutability, syn::StaticMutability::Mut(_)) {
+             panic!("#[ctor]-annotated static objects must not be mutable");
+         }
+ 
+         if attrs.iter().any(|attr| {
+-            attr.path
++            attr.path()
+                 .segments
+                 .iter()
+                 .any(|segment| segment.ident == "no_mangle")
